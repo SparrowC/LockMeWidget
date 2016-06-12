@@ -30,6 +30,7 @@ public class LockPatternView extends View {
     private static final double CONSTANT_COS_30 = Math.cos(Math.toRadians(30));
     private Canvas mCanvas;
 
+
     public LockPatternView(Context context) {
         this(context, null);
     }
@@ -229,6 +230,7 @@ public class LockPatternView extends View {
         this.postInvalidate();
     }
 
+
     private void addSelectedPoint(Point point) {
         if (!selectPoints.contains(point)) {
             point.setStatus(Point.POINT_PRESSED);
@@ -283,6 +285,7 @@ public class LockPatternView extends View {
             this.y = y;
         }
 
+
         public int getRow() {
             return row;
         }
@@ -322,7 +325,6 @@ public class LockPatternView extends View {
 
     public interface OnLockPatternListener {
         void onStart();
-
         void onComplete(List<Point> result);
     }
 }
