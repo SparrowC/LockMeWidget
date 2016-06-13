@@ -1,4 +1,6 @@
-package com.kun.lockmewidget;
+package com.kun.lockmewidget.uitls;
+
+import com.kun.lockmewidget.view.LockPatternView;
 
 /**
  * Created by Kun on 16-6-12.
