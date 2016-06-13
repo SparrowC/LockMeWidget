@@ -1,4 +1,4 @@
-package com.kun.lockmewidget;
+package com.kun.lockmewidget.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +8,9 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.kun.lockmewidget.R;
+import com.kun.lockmewidget.uitls.LockPatternUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +46,8 @@ public class LockPatternView extends View {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
     }
+
+
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         initPaints();
@@ -87,6 +92,7 @@ public class LockPatternView extends View {
         mRadius = (mWidth - offsetX * 2) / 4 / 2 - offsetX;
         mInnerRadius = mRadius / 3;
         offsetY = (mHeight - mWidth) / 2;
+        offsetY=offsetY*3/2;
         mBoxWidth = (mWidth - offsetX * 2) / 3;
         initPoints();
     }
@@ -213,7 +219,7 @@ public class LockPatternView extends View {
         isActionDown = true;
         isActionUp = false;
 
-        resetCanvas();
+        cleanLock();
         if (this.onLockPatternListener != null) {
             this.onLockPatternListener.onStart();
         }
@@ -224,7 +230,10 @@ public class LockPatternView extends View {
         }
     }
 
-    private void resetCanvas() {
+    /**
+     * 清除当前的图案密码，还原
+     */
+    public void cleanLock() {
         selectPoints.clear();
         initPoints();
         this.postInvalidate();
