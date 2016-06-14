@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.kun.lockmewidget.R;
 
 /**
- * Created by mi on 16-6-13.
+ * Created by kun on 16-6-13.
  */
 public class TitleView extends RelativeLayout {
 

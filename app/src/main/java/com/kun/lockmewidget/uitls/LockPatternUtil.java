@@ -3,7 +3,7 @@ package com.kun.lockmewidget.uitls;
 import com.kun.lockmewidget.view.LockPatternView;
 
 /**
- * Created by Kun on 16-6-12.
+ * Created by kun on 16-6-12.
  */
 public class LockPatternUtil {
     public static boolean isInCircle(LockPatternView.Point point, int mRadius, float x, float y) {

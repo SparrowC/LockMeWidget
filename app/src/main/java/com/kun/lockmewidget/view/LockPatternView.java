@@ -31,7 +31,6 @@ public class LockPatternView extends View {
     private boolean isActionMove, isActionDown, isActionUp;
     private OnLockPatternListener onLockPatternListener;
     private static final double CONSTANT_COS_30 = Math.cos(Math.toRadians(30));
-    private Canvas mCanvas;
 
 
     public LockPatternView(Context context) {
@@ -92,7 +91,7 @@ public class LockPatternView extends View {
         mRadius = (mWidth - offsetX * 2) / 4 / 2 - offsetX;
         mInnerRadius = mRadius / 3;
         offsetY = (mHeight - mWidth) / 2;
-        offsetY=offsetY*3/2;
+        offsetY=offsetY*4/3;
         mBoxWidth = (mWidth - offsetX * 2) / 3;
         initPoints();
     }
@@ -100,7 +99,6 @@ public class LockPatternView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        mCanvas = canvas;
         drawToCanvas(canvas);
     }
 

@@ -10,6 +10,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:src="@drawable/xiaomi"
         app:imageBorderWidth="2dp"
         app:onlyDrawBorder="false"
